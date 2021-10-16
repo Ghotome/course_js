@@ -1,7 +1,7 @@
 "use strict";
 
 
-let initQuestions = {
+const initQuestions = {
     userName: prompt('Как вас зовут?', ''),
     watchhedFilms: +prompt('Сколько фильмов вы уже посмотрели?', ''),
     watchedMovieLast: prompt('Какой фильм посмотрели последним?', ''),
@@ -16,7 +16,7 @@ personalMovieDB[initQuestions.userName] = {
     count: initQuestions.watchhedFilms,
     movies: {},
     actors: {},
-    genres: {},
+    genres: [],
     private: initQuestions.isPrivate
 };
 
@@ -24,4 +24,4 @@ personalMovieDB[initQuestions.userName].movies[initQuestions.watchedMovieLast] =
 personalMovieDB[initQuestions.userName].movies[initQuestions.watchedMovieLast2] = initQuestions.watchedMovieLastStars2;
 
 console.log(`All users DB:  ${JSON.stringify(personalMovieDB)}`);
-console.log(`Current user answers:  ${JSON.stringify(personalMovieDB[initQuestions.userName])}`);
+console.log(`Current user answers:  ${personalMovieDB[initQuestions.userName]}`);
